@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📖 Parker Studios | Minecraft Cinematography</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- SEO & Social Previews (Discord, Twitter, etc.) -->
+    <meta name="description"
+        content="📖 Step into the box. Minimalist & Cinematic Minecraft productions. High-end visuals built block by block.">
+    <meta property="og:title" content="Parker Studios | Minecraft Cinematography">
+    <meta property="og:description"
+        content="📖 High-end cinematic productions with a minimalist blocky aesthetic. Explore our world.">
+    <meta property="og:image" content="https://parkerstudios.com/assets/images/projects/1.png">
+    <!-- Note: Replace with actual URL when deployed -->
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Parker Studios | Minecraft Cinematography">
+    <meta name="twitter:description" content="Minimalism meets Minecraft. Premium cinematics. 📖">
+    <meta name="theme-color" content="#a31aff"> <!-- Nether portal purple theme -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        minecraft: ['Minecraft', 'sans-serif'],
+                    },
+                    colors: {
+                        minecraft: {
+                            green: '#55FF55',
+                            dark: '#1A1A1A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-black text-white font-minecraft overflow-x-hidden">
+
+    <!-- Background GIF -->
+    <img src="assets/images/Forest-lights-background.gif" alt="Minecraft Background" class="bg-gif">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass px-8 py-3">
+            <div class="flex items-center gap-3">
+                <img src="assets/images/icon.png" alt="Parker Studios Logo"
+                    class="h-10 w-10 object-contain rounded-full border border-white/20">
+                <span class="text-xl tracking-widest text-glow">PARKER STUDIOS</span>
+            </div>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+                <a href="#home" class="hover:text-gray-300 transition-colors">Home</a>
+                <a href="#projects" class="hover:text-gray-300 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-gray-300 transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Btn -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="p-2 glass">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu"
+            class="hidden mt-2 p-6 glass-dark animate-fade-in flex flex-col gap-6 text-center uppercase tracking-widest text-sm md:hidden">
+            <a href="#home" onclick="toggleMobileMenu()" class="hover:text-gray-300">Home</a>
+            <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-gray-300">Projects</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-gray-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-32 px-6">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[80vh] flex flex-col items-center justify-center text-center">
+            <div class="glass-dark p-12 max-w-4xl border border-white/10 animate-fade-in relative">
+                <!-- Fire & Ice Icons -->
+                <img src="assets/images/mc-icons/fire.webp" alt="Fire"
+                    class="absolute top-4 right-8 w-16 h-16 pixelated drop-shadow-lg z-20">
+                <img src="assets/images/mc-icons/ice.png" alt="Ice"
+                    class="absolute top-6 left-8 w-16 h-16 pixelated drop-shadow-lg z-20">
+
+                <img src="assets/images/icon.png" alt="Parker Studios Large Icon"
+                    class="w-24 h-24 mx-auto mb-8 drop-shadow-2xl rounded-full border-2 border-white/10">
+                <h1 class="text-5xl md:text-7xl mb-4 tracking-tighter text-glow">PARKER STUDIOS</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed uppercase tracking-widest">
+                    Minimalist Cinematography. Beauty in every block.
+                </p>
+                <div class="mt-10 flex gap-4 justify-center">
+                    <a href="#projects"
+                        class="glass px-8 py-4 rounded-xl hover-glass transition-all uppercase text-sm tracking-widest">View
+                        Portfolio</a>
+                    <a href="#contact"
+                        class="glass px-8 py-4 rounded-xl hover-glass transition-all uppercase text-sm tracking-widest">Contact
+                        Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section id="projects" class="py-24 max-w-7xl mx-auto">
+            <h2 class="text-3xl mb-12 tracking-widest text-center uppercase">Recent Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass overflow-hidden hover-glass transition-all group cursor-pointer"
+                    onclick="openVideo('assets/videos/parker-project1.mp4')">
+                    <div class="h-48 relative">
+                        <img src="assets/images/projects/1.png" alt="Little Johnny" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2 tracking-widest uppercase">Little Johnny</h3>
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Cinematography • 2026</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="glass overflow-hidden hover-glass transition-all group cursor-pointer"
+                    onclick="openVideo('assets/videos/parker-project2.mp4')">
+                    <div class="h-48 relative">
+                        <img src="assets/images/projects/2.png" alt="End Shadows" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2 tracking-widest uppercase">Grassfield Walk</h3>
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Short Music Video • 2026</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="glass overflow-hidden hover-glass transition-all group cursor-pointer"
+                    onclick="openVideo('assets/videos/parker-project3.mp4')">
+                    <div class="h-48 relative">
+                        <img src="assets/images/projects/3.png" alt="End Shadows" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2 tracking-widest uppercase">Johnny Vacations</h3>
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Cinematography • 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / Contact -->
+        <section id="contact" class="py-24 text-center">
+            <div class="glass nether-bg max-w-2xl mx-auto p-12">
+                <h2 class="text-2xl mb-6 tracking-widest uppercase flex items-center justify-center gap-4">
+                    <img src="assets/images/mc-icons/Writable_Book.png" alt="Book Icon" class="w-8 h-8 pixelated">
+                    Let's talk about your vision
+                </h2>
+                <p class="text-gray-400 mb-8 max-w-md mx-auto">
+                    We are ready to take your project to the next level with our cinematic vision.
+                </p>
+                <div class="flex justify-center gap-6">
+                    <!-- X (Twitter) Icon -->
+                    <!--                     <a href="https://x.com/ParkerStudiosOC" target="_blank"
+                        class="glass p-4 rounded-full hover-glass transition-all group" title="X (Twitter)">
+                        <svg class="w-6 h-6 transition-colors group-hover:text-white" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                        </svg>
+                    </a> -->
+                    <!-- (Instagram) Icon -->
+                    <!--                     <a href="#" class="glass p-4 rounded-full hover-glass transition-all">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.245 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.063 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.245-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.063-2.633-.333-3.608-1.308-.975-.975-1.245-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.332-2.633 1.308-3.608.975-.975 2.242-1.245 3.608-1.308 1.266-.058-1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.28-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a> -->
+                    <!-- Fiverr Icon -->
+                    <a href="https://www.fiverr.com/parker_vfx" target="_blank"
+                        class="glass p-4 rounded-full hover-glass transition-all group" title="Fiverr">
+                        <svg class="w-6 h-6 transition-colors group-hover:text-white jam jam-fiverr" fill="currentColor"
+                            viewBox="-2.5 -2 24 24">
+                            <path xmlns="http://www.w3.org/2000/svg"
+                                d="M16.25 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H10V0H8.125A5.632 5.632 0 0 0 2.5 5.625v.625H0V10h2.5v6.25H0V20h8.75v-3.75h-2.5V10h6.285v6.25H10V20h8.75v-3.75h-2.5z" />
+                            <circle xmlns="http://www.w3.org/2000/svg" cx="14.375" cy="1.875" r="1.875" />
+                        </svg>
+                    </a>
+                    <!-- Email Icon -->
+                    <a href="mailto:schmidtparker@proton.me"
+                        class="glass p-4 rounded-full hover-glass transition-all group" title="Email">
+                        <svg class="w-6 h-6 transition-colors group-hover:text-white" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="relative z-10 py-12 text-center text-xs text-white-500 uppercase tracking-[0.3em]">
+        &copy; 2026 Parker Studios • Built with blocks and passion
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="video-modal" onclick="closeVideo(event)">
+        <div class="mc-modal-container" onclick="event.stopPropagation()">
+            <button class="mc-btn mc-close-btn" onclick="closeVideo(event)">X</button>
+            <div class="mc-video-wrapper">
+                <video id="video-element">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="mc-controls">
+                <button class="mc-btn" id="play-pause" onclick="togglePlay()">Pause</button>
+                <button class="mc-btn" onclick="videoElement.currentTime -= 5">-5s</button>
+                <button class="mc-btn" onclick="videoElement.currentTime += 5">+5s</button>
+                <div class="flex-grow"></div>
+                <span class="text-xs uppercase mr-2 tracking-widest" style="color:#404040">Vol</span>
+                <input type="range" class="mc-volume-slider" min="0" max="1" step="0.1" value="1"
+                    oninput="setVolume(this.value)">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('video-modal');
+        const videoElement = document.getElementById('video-element');
+        const playBtn = document.getElementById('play-pause');
+
+        function openVideo(src) {
+            videoElement.src = src;
+            modal.style.display = 'flex';
+            videoElement.play();
+            playBtn.innerText = 'Pause';
+        };
+
+        function closeVideo(e) {
+            modal.style.display = 'none';
+            videoElement.pause();
+            videoElement.src = '';
+        };
+
+        function togglePlay() {
+            if (videoElement.paused) {
+                videoElement.play();
+                playBtn.innerText = 'Pause';
+            } else {
+                videoElement.pause();
+                playBtn.innerText = 'Play';
+            }
+        };
+
+        function setVolume(val) {
+            videoElement.volume = val;
+        };
+
+        videoElement.onended = () => {
+            playBtn.innerText = 'Play';
+        };
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    </script>
+</body>
+
+</html>
